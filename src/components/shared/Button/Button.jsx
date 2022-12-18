@@ -2,7 +2,7 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
 import styles from './Button.module.css';
-import CartIcon from '../feature/Cart/CartIcon/CartIcon';
+import CartIcon from '../../feature/Cart/CartIcon/CartIcon';
 
 function Button({ type, onClick, children }) {
   return (

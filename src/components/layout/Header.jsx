@@ -3,7 +3,7 @@ import styles from './Header.module.css';
 // one of the approaches of using images is just to import it as an object
 // and assign to 'src' attribute of <img> element
 import mealsImage from '../../assets/meals.jpeg';
-import Button from '../shared/Button';
+import Button from '../shared/Button/Button';
 
 function Header() {
   const cartOpenHandler = () => {
