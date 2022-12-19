@@ -3,7 +3,22 @@
     margin: 0;
     padding: 0;
     max-height: 20rem;
-    overflow: auto;
+    overflow-y: scroll;
+}
+
+.cartItem {
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.controls {
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .total {

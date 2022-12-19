@@ -1,22 +1,19 @@
 import React from 'react';
+import * as PropTypes from 'prop-types';
 import styles from './Header.module.css';
 // one of the approaches of using images is just to import it as an object
 // and assign to 'src' attribute of <img> element
-import mealsImage from '../../assets/meals.jpeg';
-import Button from '../shared/Button/Button';
+import mealsImage from '../../../assets/meals.jpeg';
+import HeaderCartButton from '../../shared/HeaderCartButton/HeaderCartButton';
 
-function Header() {
-  const cartOpenHandler = () => {
-    console.log('open cart');
-  };
-
+function Header({ onCartOpen }) {
   return (
     <>
       <header className={styles.header}>
         <h1>ReactMeals</h1>
-        <Button type="button" onClick={cartOpenHandler}>
+        <HeaderCartButton type="button" onClick={onCartOpen}>
           Open Cart
-        </Button>
+        </HeaderCartButton>
       </header>
       <div className={styles.mainImage}>
         <img src={mealsImage} alt="A table full of meals" />
@@ -24,5 +21,9 @@ function Header() {
     </>
   );
 }
+
+Header.propTypes = {
+  onCartOpen: PropTypes.func.isRequired,
+};
 
 export default Header;
