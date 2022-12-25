@@ -54,6 +54,13 @@ const cartReducer = (state, action) => {
         totalAmount: updatedAmount,
       };
     }
+    case 'REMOVE_ALL_ITEMS': {
+      return {
+        ...state,
+        items: [],
+        totalAmount: 0,
+      };
+    }
     default:
       return state;
   }
@@ -76,6 +83,12 @@ function CartContextProvider({ children }) {
     });
   };
 
+  const removeAllItemsFromCartHandler = () => {
+    dispatch({
+      type: 'REMOVE_ALL_ITEMS',
+    });
+  };
+
   const cartContext = useMemo(
     () => ({
       // we have data
@@ -84,6 +97,7 @@ function CartContextProvider({ children }) {
       // and ways of updating it
       addItem: addItemToCartHandler,
       removeItem: removeItemFromCartHandler,
+      removeAllItems: removeAllItemsFromCartHandler,
     }),
     [cartState.items, cartState.totalAmount],
   );

@@ -5,14 +5,14 @@ import CartContextProvider from './store/CartContextProvider';
 import Header from './components/layout/Header/Header';
 
 function App() {
-  const [isModalShown, setIsModalShown] = useState(false);
+  const [isCartShown, setIsCartShown] = useState(false);
 
-  const showModalHandler = () => {
-    setIsModalShown(true);
+  const showCartHandler = () => {
+    setIsCartShown(true);
   };
 
-  const hideModalHandler = () => {
-    setIsModalShown(false);
+  const hideCartHandler = () => {
+    setIsCartShown(false);
   };
 
   return (
@@ -22,10 +22,10 @@ function App() {
     // 2) Header (data - to show the number on the badge)
     // 3) MealsSection (methods - to add meals to the Cart)
     <CartContextProvider>
-      {isModalShown && (
-        <Cart onCartClose={hideModalHandler} isModalShown={isModalShown} />
+      {isCartShown && (
+        <Cart onCartClose={hideCartHandler} isModalShown={isCartShown} />
       )}
-      <Header onCartOpen={showModalHandler} />
+      <Header onCartOpen={showCartHandler} />
       <main>
         <MealsSection />
       </main>
